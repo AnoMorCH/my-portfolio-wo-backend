@@ -1,0 +1,842 @@
+/* ! Adaptive markup is made until 375px. */
+
+/* 1. General */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main > section {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  border-bottom: 0.1rem black solid;
+}
+
+main > section > h1 {
+  min-height: 10vh;
+  text-align: center;
+  line-height: 10vh;
+  font-size: 3rem;
+}
+
+main > section > h2 {
+  font-weight: 100;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+main > section > div.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media (max-width: 1200px) {
+  main > section > h1 {
+    font-size: 2.5rem;
+  }
+
+  main > section > h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 550px) or (max-height: 700px) {
+  main > section {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+}
+
+@media (max-height: 400px) {
+  main > section {
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+  }
+}
+
+@media (max-height: 200px) {
+  main > section {
+    padding-top: 9vh;
+    padding-bottom: 9vh;
+  }
+}
+
+/* 2. Header */
+header {
+  background-color: rgb(246, 245, 241);
+  font-weight: bolder;
+  font-size: 1.5em; 
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: solid black 0.1rem;
+}
+
+header > div.logo {
+  min-width: 10vw;
+  text-align: center;
+  color: rgb(0, 54, 78);
+}
+
+header > div.languages {
+  color: rgb(0, 54, 78);
+}
+
+header > div.languages > a {
+  text-decoration: none;
+  color: rgb(0, 54, 78);
+  cursor: pointer;
+}
+
+header > div.languages > a.current {
+  text-decoration: underline;
+}
+
+header > ul.burger-menu {
+  width: 50%;
+  display: flex;
+}
+
+header > * {
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+header > ul.burger-menu > li {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block;
+  text-align: center;
+  padding: 0.5em 2em;
+  border-radius: 2em;
+  transition: all 0.3s ease 0s;
+  color: rgb(0, 54, 78);
+}
+
+header > ul.burger-menu > li:hover {
+  background-color: rgb(0, 54, 78);
+  cursor: pointer;
+  color: white;
+}
+
+header > ul.burger-menu > li:active {
+  transform: scale(0.8);
+}
+
+header > div.burger {
+  right: 0;
+  position: absolute;
+  margin-right: 5vw;
+  cursor: pointer;
+}
+
+header > div.burger > div {
+  display: none; 
+  width: 25px;
+  height: 5px;
+  background-color: rgb(0, 54, 78);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+header > ul.burger-menu > img.close-button {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  width: 30px;
+  right: 5vw;
+  top: 5vw;
+  color: white;
+}
+
+@media (max-height: 400px) {
+  header > ul.burger-menu {
+    font-size: 1rem;
+    overflow-y: scroll;
+  }
+}
+
+@media (max-width: 1440px) {
+  header {
+    justify-content: space-between;
+    border: none;
+  }
+
+  header > div.logo {
+    display: none;
+  }
+  
+  header > div.languages {
+    margin-left: 5vw;
+  }
+
+  header > div.burger {
+    position: static;
+  }
+
+  header > ul.burger-menu > li {
+    position: relative;
+    padding: 0.8em;
+  }
+  
+  header > ul.burger-menu > li::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 0.2em;
+    width: 0;
+    left: 0;
+    bottom: 1px;
+    transition: 0.3s;
+  }
+  
+  header > ul.burger-menu > li:hover::after {
+    width: 100%;
+  }
+  
+  header > div.burger > div {
+    display: block;
+  }
+
+  header > ul.burger-menu {
+    top: -100%;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    justify-content: center;
+    background: rgb(0, 54, 78);
+    transition: top 1s ease 0s;
+    flex-direction: column;
+  }
+  
+  header > ul.burger-menu > li {
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    color: white;
+  }
+}
+
+@media (max-height: 600px) {
+  header {
+    min-height: 15vh;
+  }
+}
+
+/* 3. About Me */
+main > section.about-me {
+  display: flex;
+  background-color: rgb(246, 245, 241);
+}
+
+main > section.about-me > * {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+main > section.about-me > img {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  border: 0.1rem solid black;
+}
+
+main > section.about-me > div.description {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 3vw;
+}
+
+main > section.about-me > div.description > h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+main > section.about-me > div.description > p {
+  font-size: 1.5rem;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+main > section.about-me > div.description > div.contacts > a {
+  text-decoration: none;
+  color: black;
+}
+
+main > section.about-me > div.description > div.contacts > a > i {
+  font-size: 3.5rem;
+  margin-top: 1rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+main > section.about-me > div.description > div.contacts > a > i:hover {
+  color: rgb(0, 54, 78);
+  cursor: pointer;
+}
+
+main > section.about-me > div.description > div.contacts > a > i:active {
+  transition: all 0.3s ease 0s;
+  transform: scale(0.8);
+}
+
+@media (max-width: 1440px) {
+  main > section.about-me {
+    padding-left: 12.5vw;
+    padding-right: 12.5vw;
+  }
+
+  main > section.about-me > div.description > h1 {
+    font-size: 2.5rem;
+  }
+
+  main > section.about-me > div.description > p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 1220px) {
+  main > section.about-me {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  main > section.about-me {
+    flex-direction: column;
+  }
+  
+  main > section.about-me > img {
+    width: 40vw;
+    height: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main > section.about-me > div.description > * {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  main > section.about-me {
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+  }
+
+  main > section.about-me > img {
+    width: 50vw;
+    height: 50vw;
+  }
+  
+  main > section.about-me > div.description > h1 {
+    margin-top: 4vw;
+  }
+
+  main > section.about-me > div.description > p {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+}
+
+@media (max-width: 425px) {
+  main > section.about-me {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  main > section.about-me > img {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  main > section.about-me > div.description > h1 {
+    font-size: 2.5em;
+  }
+}
+
+/* 4. Projects */
+/* 4.1. The visible part */
+main > section.projects {
+  background-color: rgb(246, 236, 233);
+}
+
+main > section.projects > h2.ps-note {
+  margin-bottom: 0;
+  margin-top: 3rem;
+}
+
+main > section.projects > div.list > a {
+  text-decoration: none;
+  color: black;
+}
+
+main > section.projects > div.list > a > div {
+  max-width: 25rem;
+  border-radius: 2rem;
+}
+
+main > section.projects > div.list > a > div:hover {
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  transform: scale(1.05);
+  filter: brightness(50%);
+}
+
+main > section.projects > div.list > a > div > div.image {
+  height: 15rem;
+  border-top: 0.15rem solid black;
+  border-left: 0.15rem solid black;
+  border-right: 0.15rem solid black;
+  border-radius: 2rem 2rem 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+main > section.projects > div.list > a > div > div.description {
+  height: 15rem;
+  border: 0.15rem solid black;
+  border-radius: 0 0 2rem 2rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  background-color: white;
+}
+
+main > section.projects > div.list > a > div > div.simetra {
+  background-image: url('images/simetra-1.png');
+}
+
+main > section.projects > div.list > a > div > div.poll {
+  background-image: url('images/poll-project.png')
+}
+
+main > section.projects > div.list > a > div > div.description > div.header {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+main > section.projects > div.list > a > div > div.description > p {
+  font-size: 1.35rem;
+}
+
+@media (max-width: 1200px) {
+  main > section.projects > div.list > a > div {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  main > section.projects > h2.ps-note {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 550px) {
+  main > section.projects {
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+  }
+
+  main > section.projects > h1 {
+    min-height: 10vh;
+  }
+
+  main > section.projects > div.list > a > div > div.description {
+    height: 17.5rem;
+  }
+  
+  main > section.projects > h2.ps-note {
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  main > section.projects > div.list > a > div > div.description {
+    height: 22.5rem;
+  }
+}
+
+@media (max-height: 700px) {
+  main > section.projects > h1 {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* 4.2. The popup part */
+main > div.popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+
+  background-color: rgb(241, 236, 222);
+  overflow-y: scroll;
+}
+
+main > div.popup:target {
+  opacity: 1;
+  pointer-events: all;
+}
+
+main > div.popup > div.content {
+  margin-top: 2rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+
+main > div.popup > div.content > a > img {
+  position: absolute;
+  right: 5rem;
+  width: 3rem;
+  cursor: pointer;
+}
+
+main > div.popup > div.content > h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+main > div.popup > div.content > div.description {
+  margin-bottom: 1rem;
+}
+
+main > div.popup > div.content > div.description > p {
+  font-size: 1.5rem;
+  text-indent: 3rem;
+}
+
+main > div.popup > div.content > div.footer > p {
+  font-size: 1rem;
+  text-indent: 1.5rem;
+}
+
+main > div.popup > div.content > div.footer > p > span {
+  font-weight: bold;
+  color: rgb(0, 54, 78);
+}
+
+main > div.popup > div.content > div.container {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+main > div.popup > div.content > a > button {
+  background-color: rgb(0, 54, 78);
+  color: white;
+  font-weight: 1000;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-bottom: 3rem;
+}
+
+main > div.popup > div.content > a > button:active {
+  transform: scale(0.8);
+}
+
+main > div.popup > div.content > div.container > img {
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
+}
+
+main > div.popup > div.content > div.container > div.images-list {
+  display: flex;
+  overflow-x: scroll;
+}
+
+main > div.popup > div.content > div.container > div.images-list > img {
+  width: 15vw;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+main > div.popup > div.content > div.container > div.images-list > img.current {
+  border: rgb(0, 54, 78) solid 0.2rem;
+}
+
+@media (max-width: 1440px) {
+  main > div.popup > div.content {
+    margin-right: 15rem;
+    margin-left: 15rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  main > div.popup > div.content {
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+  }
+  
+  main > div.popup > div.content > a > img {
+    width: 2rem;
+    right: 2.5rem;
+    top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main > div.popup > div.content {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  
+  main > div.popup > div.content > a > img {
+    right: 1.5rem;
+    top: 1rem;
+  }
+
+  main > div.popup > div.content > a > button {
+    width: calc(100% - 2rem); 
+  }
+}
+
+@media (max-width: 550px) {
+  main > div.popup > div.content > a > img {
+    top: 1rem;
+    right: 1rem;
+    width: 1.5rem;
+  }
+
+  main > div.popup > div.content > h1 {
+    font-size: 2rem;
+  }
+
+  main > div.popup > div.content > div.description > p {
+    font-size: 1rem;
+    text-indent: 2rem;
+  }
+}
+
+/* 5. Skills */
+main > section.skills {
+  background-color: #FFFFFF;
+}
+
+main > section.skills > div.list > div.container {
+  min-width: 25rem;
+  min-height: 25rem;
+  border: 0.15rem solid black;
+  background-color: rgb(241, 236, 222);
+  border-radius: 2rem;
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+main > section.skills > div.list > div.container > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+main > section.skills > div.list > div.container > div:hover {
+  transform: rotateY(180deg);
+}
+
+main > section.skills > div.list > div.container > div > div.the-front-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  
+  text-align: center;
+  line-height: 25rem;
+  font-size: 3rem;
+  font-weight: 1000;
+}
+
+main > section.skills > div.list > div.container > div > div.the-back-side {
+  position: relative;
+  backface-visibility: hidden;
+  
+  padding: 5%;
+  font-size: 1.25rem;
+  text-align: center;
+
+  top: 50%;
+  transform: rotateY(180deg) translateY(-50%) perspective(1px);
+}
+
+@media (max-width: 450px) {
+  main > section.skills > div.list > div.container {
+    min-width: 20rem;
+    min-height: 20rem;
+  }
+
+  main > section.skills > div.list > div.container > div > div.the-front-side {
+    line-height: 20rem;
+    font-size: 2.5rem;
+  } 
+
+  main > section.skills > div.list > div.container > div > div.the-back-side {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  main > section.skills > div.list > div.container {
+    min-width: 15rem;
+    min-height: 25rem;
+  }
+
+  main > section.skills > div.list > div.container > div > div.the-front-side {
+    line-height: 25rem;
+    font-size: 2rem;
+  } 
+
+  main > section.skills > div.list > div.container > div > div.the-back-side {
+    font-size: 1rem;
+  }
+}
+
+/* 6. Recognition */
+main > section.recognition {
+  background-color: rgb(241, 236, 222);
+  padding-bottom: 5rem;
+}
+
+main > section.recognition > div.list > div {
+  display: flex; 
+}
+
+main > section.recognition > div.list > div > img {
+  width: 30rem;
+  height: 30rem;
+  border: 0.2rem solid black;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+main > section.recognition > div.list > div > div.description {
+  margin-left: 3vw;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+main > section.recognition > div.list > div > div.description > h2 {
+  text-decoration: underline;
+  font-size: 1.75rem;
+}
+
+main > section.recognition > div.list > div > div.description > p {
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: end;
+}
+
+main > section.recognition > div.list > div > div.description > a > button {
+  background-color: rgb(0, 54, 78);
+  color: white;
+  font-weight: 1000;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-bottom: 3rem;
+}
+
+main > section.recognition > div.list > div > div.description > a > button:active {
+  transform: scale(0.8);
+}
+
+@media (max-width: 1440px) {
+  main > section.recognition > div.list > div {
+    display: block; 
+  }
+
+  main > section.recognition > div.list > div > img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+
+  main > section.recognition > div.list > div > div.description > h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  main > section.recognition > div.list > div > div.description > h2 {
+    font-size: 1.5rem;
+  }
+  
+  main > section.recognition > div.list > div > div.description > p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  main > section.recognition > div.list > div > div.description > button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  main > section.recognition > div.list > div > img {
+    max-width: 25rem;
+    max-height: 25rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 550px) {
+  main > section.recognition {
+    padding-bottom: 3rem;
+  }
+
+  main > section.recognition > div.list > div > img {
+    max-width: 20rem;
+    max-height: 20rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-height: 960px) {
+  main > section.recognition > h1 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* 7. Footer */
+footer {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  background-color: rgb(0, 54, 78);
+  color: white;
+  font-weight: 500;
+}
