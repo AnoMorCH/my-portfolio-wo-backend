@@ -103,6 +103,7 @@ header > div.languages > a.current {
 header > ul.burger-menu {
   width: 50%;
   display: flex;
+  z-index: 999;
 }
 
 header > * {
