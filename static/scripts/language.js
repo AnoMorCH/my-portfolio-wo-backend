@@ -66,7 +66,7 @@ const data = {
             'button': 'CHECK IT'
         },
         'skills': {
-            'header': 'Навыки',
+            'header': 'Skills',
             'backPython': 'I have a back-end background. I have worked ' +
                 'with Django and Flask. I am pretty confident with all ' +
                 'simple components of back-end development like creating ' +
